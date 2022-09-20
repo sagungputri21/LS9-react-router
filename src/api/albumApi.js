@@ -4,7 +4,7 @@ const AlbumAPI = {
     getAlbums: async (id) => {
       try {
         const res = await client.get(`/albums?userId=${id}`);
-        return res.data.data;
+        return res.data;
       }catch (err) {
         console.log(err);
         console.log(err.response)
@@ -14,8 +14,8 @@ const AlbumAPI = {
 
     getAllPhotos: async () => {
       try {
-        const photos = await AlbumAPI.getAlbums(id);
-        return photos.data.data;
+        const photos = await AlbumAPI.getAlbums('/photos');
+        return photos.data;
       }catch (err) {
         console.log(err);
         console.log(err.response)
@@ -25,8 +25,8 @@ const AlbumAPI = {
 
     getPhotosByID: async (id) => {
      try {
-       const photos = await AlbumAPI.getAllPhotos(`/photos?albumId=${id}`);
-       return photos.data.data;
+       const photos = await AlbumAPI.getAlbums(`/photos?albumId=${id}`);
+       return photos.data;
      }catch (err) {
        console.log(err);
        console.log(err.response)
