@@ -1,38 +1,27 @@
-import { useState } from 'react'
-import reactLogo from "/assets/react.svg"
 import './App.css'
 import { Routes, Route } from 'react-router-dom';
-import Test from './pages/Test';
+// import Test from './pages/Test';
+import Home from './pages/home/Home';
+import Users from './pages/user/Users';
+import UserDetail from './pages/user/UserDetail';
+import Navbar from './components/navbar/Navbar';
+import Container from './components/layout/Layout';
+import AlbumsPage from './pages/albums/AlbumsPage';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      {/* <div className='flex justify-center'>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p className='underline underline-offset-8 decoration-slate-100'>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/test" element={<Test />}/>
-      </Routes>
+      <Navbar/>
+      <Container>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/user" element={<Users />} />
+          <Route path="/user/:id" element={<UserDetail />} >
+            <Route path="/user/:id/photos/" element={<andomPhotos  />} />
+          </Route>
+          <Route path="/user/albums/:id" element={<AlbumsPage />} />
+        </Routes>
+      </Container>
     </div>
   )
 }
