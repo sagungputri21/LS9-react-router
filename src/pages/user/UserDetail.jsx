@@ -30,22 +30,19 @@ const UserDetail = () => {
         <div className="flex items-start md:px-0 px-2">
           <div className="flex flex-col items-start text-start">
             <h1 className="md:text-5xl text-4xl font-semibold mb-8">{user.name} Profile</h1>
-            <h3 className="font-bold text-lg flex items-start underline underline-offset-4">Details Data :</h3>
-            <div className="mt-3 flex flex-col gap-1 md:text-lg text-md">
-              <p>Name     : {user.name}</p>
-              <p>Username :{user.username}</p>
-              <p>Email    : {user.email}</p>
-              <p></p>
-            </div>
+            <h3 className="font-bold text-lg flex items-start underline underline-offset-4">Complete Profile :</h3>
+            <hr className="border border-blue-300 w-full mt-2"/>
+              <div className="mt-3 flex flex-col gap-1 md:text-lg text-md p-5 w-full">
+                <p>Name     : {user.name}</p>
+                <p>Username :{user.username}</p>
+                <p>Email    : {user.email}</p>
+                <p></p>
+              </div>
+             <hr className="border border-blue-300 w-full mt-2"/>
             <LinkButton
               path={'/user'} 
               children="Go Back"
-              extraClass="bg-gray-200 font-bold mt-12"
-            />
-            <CustomButton 
-              onclick={() => navigate(`${id}`)}
-              children="See More"
-              extraClass="bg-blue-400 text-white my-5 w-64 mx-3 mb-2 hover:bg-blue-600"
+              extraClass="bg-gray-200 font-bold mt-5"
             />
           </div>
 

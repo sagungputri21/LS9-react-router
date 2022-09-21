@@ -15,10 +15,11 @@ function App() {
       <Container>
         <Routes>
           <Route path="/" element={<Home />}/>
-          <Route path="/user" element={<Users />}/>
-          <Route path="/albums" element={<AlbumsPage />} />
-          {/* <Route path=":userId" element={<AlbumsPage />} /> */}
-          <Route path="/user/:id" element={<UserDetail />} />
+          <Route path="/user" element={<Users />} />
+          <Route path="/user/:id" element={<UserDetail />} >
+            <Route path="/user/:id/photos/" element={<andomPhotos  />} />
+          </Route>
+          <Route path="/user/albums/:id" element={<AlbumsPage />} />
         </Routes>
       </Container>
     </div>
