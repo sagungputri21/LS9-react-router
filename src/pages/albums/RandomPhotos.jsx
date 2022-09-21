@@ -7,6 +7,7 @@ const RandomPhotos = () => {
     const [photos, setPhotos] = useState([20]);
     const { id } = useParams();
     console.log('TEST ==>', id )
+    const navigate = useNavigate();
 
     const fetchData = async () => {
         try {
