@@ -18,8 +18,9 @@ npm install
 ```bash
 npm run dev
 ```
+and you will be directed to http://127.0.0.1:5173/ to view the result in your browser
 
-
+### **For Production**
 Builds the app for production or deployment :
 ```bash
 npm run build
