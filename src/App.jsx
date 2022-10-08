@@ -8,6 +8,7 @@ import Navbar from './components/navbar/Navbar';
 import Container from './components/layout/Layout';
 import AlbumsPage from './pages/albums/AlbumsPage';
 import RandomPhotos from './pages/albums/RandomPhotos';
+import UserPhotoPage from './pages/albums/PhotosPage';
 
 function App() {
   return (
@@ -19,10 +20,12 @@ function App() {
           <Route path="/user" element={<Users />} />
           <Route path="/user/:id" element={<UserDetail />} >
             <Route path="user-photos" element={<RandomPhotos  />} />
-            <Route path="user-photos" element={<RandomPhotos  />} />
-            <Route path="user-photos" element={<RandomPhotos  />} />
+            {/* <Route path="user-photos" element={<RandomPhotos  />} />
+            <Route path="user-photos" element={<RandomPhotos  />} /> */}
           </Route>
-          <Route path="/user/albums/:id" element={<AlbumsPage />} />
+          <Route path="/user/albums/:id" element={<AlbumsPage />} >
+            <Route path=":id" element={<UserPhotoPage />} />
+          </Route>
         </Routes>
       </Container>
     </div>

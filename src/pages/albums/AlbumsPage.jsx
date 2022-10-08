@@ -1,8 +1,9 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import AlbumAPI from '../../api/albumApi';
 import UserAPI from "../../api/userApi";
+import AlbumCard from "../../components/cards/AlbumCard";
 
 const AlbumsPage = () => {
     const [albums, setAlbums] = useState([]);
@@ -29,12 +30,18 @@ const AlbumsPage = () => {
     return (
       <div>
         <h1>This are some albums of {user.name}</h1>
-          {albums && albums.map(({ userId, id, title }) => (
-            <>
-            <h1>{userId}</h1>
-            <h1>{id}</h1>
-            <h1>{title}</h1></>
+        <div className="py-5">
+          <Link to={`${albums.id}`}>
+            {albums && albums.map(({ userId, id, title }) => (
+              <AlbumCard 
+                userId={userId}
+                id={id}
+                name={title}
+                colorCount={"10 colors"}
+              />
           ))}
+          </Link>
+        </div>
       </div>
     )
     

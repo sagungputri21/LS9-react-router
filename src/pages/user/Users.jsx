@@ -26,7 +26,7 @@ const Users = () => {
         <h1 className="text-4xl mb-12">Hallo! <br/> This is 10 user's data from JSONPlaceholder</h1>
         <div className="flex flex-wrap gap-8 justify-center">
             {users.map((user) => (
-                <UserCard 
+                <UserCard  
                     id={user.id}
                     name={user.name}
                     username={user.username}
