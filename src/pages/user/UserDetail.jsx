@@ -38,14 +38,14 @@ const UserDetail = () => {
                 <p>Email    : {user.email}</p>
                 <p></p>
               </div>
-             <hr className="border border-blue-300 w-full mt-2"/>
+             {/* <hr className="border border-blue-300 w-full mt-2"/> */}
             <LinkButton
               path={'/user'} 
               children="Go Back"
               extraClass="bg-gray-200 font-bold mt-5"
             />
           </div>
-          <ul className="flex border-b mt-16 gap-5">
+          <ul className="flex border-b mt-16 gap-5 mb-16">
               <div className="flex gap-5 -mb-px mr-1 bg-white bg-opacity-95 py-2 px-4 w-screen max-w-screen-xl drop-shadow-lg">
                   <Link to="user-photos" onClick={handleClick} className={`text-md hover:text-blue-500 ${isActive === true ? 'text-blue-600 font-semibold underline underline-offset-8 decoration-blue-600' : 'text-gray-400'}`}>
                     Photos
@@ -53,7 +53,7 @@ const UserDetail = () => {
                   <Link to="user-posts" onClick={handleClick} className={`text-md hover:text-blue-500 ${isActive === true ? 'text-blue-600 font-semibold underline underline-offset-8 decoration-blue-600' : 'text-gray-400'}`}>
                     Posts
                   </Link>
-                  <Link to="todos" onClick={handleClick} className={`text-md hover:text-blue-500 ${isActive === true ? 'text-blue-600 font-semibold underline underline-offset-8 decoration-blue-600' : 'text-gray-400'}`}>
+                  <Link to="user-todos" onClick={handleClick} className={`text-md hover:text-blue-500 ${isActive === true ? 'text-blue-600 font-semibold underline underline-offset-8 decoration-blue-600' : 'text-gray-400'}`}>
                     Todos
                   </Link>
                   <Outlet />

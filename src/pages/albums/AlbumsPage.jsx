@@ -31,7 +31,7 @@ const AlbumsPage = () => {
       <div>
         <h1>This are some albums of {user.name}</h1>
         <div className="py-5">
-          <Link to={`${albums.id}`}>
+          <Link to={`${id}`}>
             {albums && albums.map(({ userId, id, title }) => (
               <AlbumCard 
                 userId={userId}
